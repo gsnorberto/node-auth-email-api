@@ -15,8 +15,8 @@ export const Auth = {
          let hash: string = req.headers.authorization.substring(6) //encoded
          let decoded: string = Buffer.from(hash, 'base64').toString(); //decoded
          let data: string[] = decoded.split(':') //email@email.com:password
-         console.log(data[0]+':'+data[1]);
          
+         console.log(data[0]+':'+data[1]);
 
          if(data.length === 2){
             let hasUser = await User.findOne({ //check user in DataBase
